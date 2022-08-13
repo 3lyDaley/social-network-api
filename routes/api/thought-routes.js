@@ -1,5 +1,23 @@
+const router = require('express').Router();
+const {
+  getAllThoughts,
+  getThoughtById,
+  addThought,
+  deleteThought
+} = require('../../controllers/thought-controller')
+
 // GET all thoughts at `/api/thoughts`
+router 
+  .route('/')
+  .get(getAllThoughts)
+  .post(addThought);
+
+
 // GET to get a single thought by its _id
-// POST to create a new though
-//    (dont forget to push the created thought's _id to associated 
-//     USERS thought array field)
+router
+  .route(':id')
+  .get(getThoughtById)
+  .delete(deleteThought)
+
+
+module.exports = router;

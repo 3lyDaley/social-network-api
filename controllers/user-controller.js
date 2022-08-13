@@ -65,7 +65,7 @@ const userController = {
 }
 
 
-// `/api/users/:userId/friends/:friendId`
+
 // POST to add new friend to user's list
 // DELETE to remove a friend from users list
 
