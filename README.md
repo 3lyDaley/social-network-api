@@ -1,6 +1,30 @@
 # Social Network API
 
-## General Information
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+
+
+ ## Contents
+ 
+ - [Description](#description)
+    - [User Story](#user-story)
+    - [Acceptance Criteria](#acceptance-criteria)
+ - [Dependencies](#dependencies)
+ - [Installation Instructions](#installing)
+ - [Execution](#executing-program)
+ - [Demos](#demos)
+    - [`User` Functions](#users)
+    - [`Friend` Functions](#friends)
+    - [`Thoughts` Functions](#thoughts)
+ - [Authors](#authors)
+
+
+## Description
+
+This is the backend component of a basic social media API. The program included provides the paths that associates friends, thoughts, and reactions to thoughts with user accounts, stored to thier `User` object all on the server side. Users' information is stored and organized using Mongoose DB, and the paths were tested using Insomnia through a local host.
+
 --------------------------------------------------------
 ### User Story
 ```
@@ -29,6 +53,23 @@ THEN I am able to successfully create and delete reactions to
 thoughts and add and remove friends to a user’s friend list
 ```
 
+## Dependencies
+
+- Express version 4.18.1
+- Mongoose DB version 6.5.0
+
+## Installing
+
+* Fork this repo and clone to your machine
+* `npm i` to install all dependencies
+* All routes were tested using Insomnia
+
+### Executing program
+
+* Open terminal in root
+* enter `npm i` in command line for dependencies
+* `npm start` to connect to local server
+* Using insomnia, amend the request to whatever it is you are testing. Notes on the route files give more detail on the paths required.
 
 ## DEMOS
 
@@ -71,7 +112,7 @@ Thoughts video demonstrates the following functions:
 - `PUT` to update a thought by its `_id`
 - `DELETE` to remove a thought by its `_id`
 
-...And includes the following reaction functions: 
+...And includes the following `reaction` functions: 
 
 - `POST` to create a reaction stored in a single thought's `reactions` array field
 - `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
