@@ -17,19 +17,20 @@ router
 
 
 // GET to get a single thought by its _id
+// `api/thoughts/:thoughtId`
 router
   .route('/:id')
   .get(getThoughtById)
   .put(updateThought)
   .delete(deleteThought)
 
-// /api/thoughts/:thoughtId/reactions/
+// `api/thoughts/:thoughtId/reactions/`
 router
   .route('/:thoughtId/reactions')
   .post(addReaction);
 
-// api/thoughts/:thoughtId/reactions/:reactionId
-
+  
+// `api/thoughts/:thoughtId/reactions/:reactionId`
 router
   .route('/:thoughtId/reactions/:reactionId')
   .delete(removeReaction)
