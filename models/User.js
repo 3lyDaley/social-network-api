@@ -2,24 +2,26 @@ const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema({
   username: {
-    type: String
-    // Unique
-    // required
-    // trimmed
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
   },
   email: {
-    type: String
-    // Unique
-    // required
-    // match valid email address
+    type: String,
+    unique: true,
+    required: true,
+    match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
   },
   thoughts: {
     // Array of _id values referencing Thought model
+    type: Schema.Types.ObjectId,
+    ref: 'Thought'
   },
   friends: [{
     // Array of _id values referenceing the User model (self-ref)
     type: Schema.Types.ObjectId,
-    ref: 'Friend'
+    ref: 'User'
   }]
 },
 {
@@ -32,7 +34,8 @@ const UserSchema = new Schema({
 
 UserSchema.virtual('friendCount').get(function() {
   return this.friends.length
-})
+});
+
 const User = model('User', UserSchema)
 
 module.exports = User;

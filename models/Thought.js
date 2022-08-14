@@ -11,12 +11,12 @@ const ReactionSchema = new Schema (
     },
     reactionBody: {
       type: String,
-      // required
-      // 280 Character Maximum
+      required: true,
+      maxLength: 280
     },
     username: {
-      type: String
-      // required
+      type: String,
+      required: true
     },
     createdAt: {
       type: Date,
@@ -25,13 +25,19 @@ const ReactionSchema = new Schema (
       // use a getter method to format timestamp on query
       get: createdAtVal => dateFormat(createdAtVal)
     }
+  },
+  {
+    toJSON: {
+      getters: true
+    }
   }
-)
+
+);
 
 const ThoughtSchema = new Schema ({
   thoughtText: {
-    type: String
-    // Required
+    type: String,
+    required: true
     // must be between 1 and 280 characters
   },
   createdAt: {
@@ -41,7 +47,7 @@ const ThoughtSchema = new Schema ({
   },
   username: {
     type: String,
-    // required
+    required: true
   },
   reactions: [ReactionSchema]
 },
