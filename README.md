@@ -28,3 +28,58 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to 
 thoughts and add and remove friends to a user’s friend list
 ```
+
+
+## DEMOS
+
+### USERS
+Demonstration of the following:
+
+- `GET` all users
+- `GET` a single user by its `_id` and populated `thought` and `friend` data
+- `POST` a new user
+- `PUT` to update a user by its `_id`
+- `DELETE` to remove user by its `_id`
+
+
+
+https://user-images.githubusercontent.com/100460009/184522861-e4778361-f4ce-40eb-b367-f968d571118a.mp4
+
+
+
+--------------------------------------------------------------------------------------------
+### FRIENDS 
+
+Demonstration of the following:
+
+- `POST` to add a new friend to a user's friend list
+- `DELETE` to remove a friend from a user's friend list
+
+
+https://user-images.githubusercontent.com/100460009/184522884-4acf152c-680e-41b1-91ed-1a6028066632.mp4
+
+
+
+---------------------------------------------------------------------------------------------
+### THOUGHTS
+
+Thoughts video demonstrates the following functions: 
+
+- `GET` to get all thoughts
+- `GET` to get a single thought by its `_id`
+- `POST` to create a new thought 
+- `PUT` to update a thought by its `_id`
+- `DELETE` to remove a thought by its `_id`
+
+...And includes the following reaction functions: 
+
+- `POST` to create a reaction stored in a single thought's `reactions` array field
+- `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+
+https://user-images.githubusercontent.com/100460009/184522787-18539be7-ca2d-428c-830b-d14a6505b7d3.mp4
+
+--------------------------------------------------------------
+
+
+
+
